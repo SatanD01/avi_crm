@@ -271,7 +271,7 @@ tr .btn {
 }
 
 .buttons-excel:focus, .buttons-pdf:focus, .buttons-copy:focus, .btn.btn-accept:focus {
-    box-shadow: 0 8px 10px rgba(249, 25, 66,0.3) !important;
+    box-shadow: 0 8px 10px rgb(46 123 247 / 30%) !important;
 }
 
 thead th:not(:first-child) {
