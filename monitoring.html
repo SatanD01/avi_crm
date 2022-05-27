@@ -25,84 +25,72 @@
     $(document).ready(function() { //
         $('.selectpicker').selectpicker();
     });
-    function menuOnClick() {
-        document.getElementById("menu-bar").classList.toggle("change");
-        document.getElementById("menu_nav").classList.toggle("change");
-        document.getElementById("menu-bg").classList.toggle("change-bg");
-    }
 </script>
-
-<header class="header">
-    <div class="container-fluid">
-        <div class="icons-block">
-            <div id="menu">
-                <div id="menu-bar" onclick="menuOnClick()">
-                    <div id="bar1" class="bar"></div>
-                    <div id="bar2" class="bar"></div>
-                    <div id="bar3" class="bar"></div>
-                </div>
-                <nav class="menu_nav" id="menu_nav">
-                    <ul>
-                        <li>
-                            <a href="index.html" class="menu_icon-item">
-                                <i class="far fa-folder-open"></i>
-                                <span>Заказы</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="monitoring.html" class="menu_icon-item">
-                                <i class="fas fa-desktop"></i>
-                                <span>Мониторинг</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="kassa.html" class="menu_icon-item">
-                                <i class="fa fa-funnel-dollar"></i>
-                                <span>Касса</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="agents.html" class="menu_icon-item">
-                                <i class="fas fa-user-astronaut"></i>
-                                <span>Агенты</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="menu-bg" id="menu-bg"></div>
-
-            <div class="desc-link d-flex">
-                <a href="index.html" class="icon-item">
-                    <i class="far fa-folder-open"></i>
-                    <span>Заказы</span>
-                </a>
-                <a href="monitoring.html" class="icon-item">
-                    <i class="fas fa-desktop"></i>
-                    <span>Мониторинг</span>
-                </a>
-                <a href="kassa.html" class="icon-item">
-                    <i class="fa fa-funnel-dollar"></i>
-                    <span>Касса</span>
-                </a>
-                <a href="agents.html" class="icon-item">
-                    <i class="fas fa-user-astronaut"></i>
-                    <span>Агенты</span>
-                </a>
-            </div>
-        </div>
-        <div class="links">
-            <a href="index.html">CRM</a>
-            /
-            <span class="active">Мониторинг</span>
-        </div>
+<div id="accordeon" class="desc-link d-flex flex-column align-items-start">
+    <div class="acc-head icon-item d-flex align-items-center mt-2">
+        <i class="far fa-folder-open me-2"></i>
+        <span>Заказы</span>
     </div>
-</header>
+    <div class="acc-body">
+        <a href="index.html">Заказы Турции</a>
+        <a href="index.html">Заказы Казахстана</a>
+        <a href="index.html">Заказы России</a>
+    </div>
+    <div class="acc-head icon-item d-flex align-items-center">
+        <i class="fas fa-desktop me-2"></i>
+        <span>Мониторинг</span>
+    </div>
+    <div class="acc-body">
+        <a href="monitoring.html">Мониторинг Турции</a>
+        <a href="monitoring.html">Мониторинг Казахстана</a>
+        <a href="monitoring.html">Мониторинг России</a>
+    </div>
+    <div class="acc-head icon-item d-flex align-items-center">
+        <i class="fa fa-funnel-dollar me-2"></i>
+        <span>Касса</span>
+    </div>
+    <div class="acc-body">
+        <a href="kassa.html">Касса Турции</a>
+        <a href="kassa.html">Касса Казахстана</a>
+        <a href="kassa.html">Касса России</a>
+    </div>
+    <div class="acc-head icon-item d-flex align-items-center">
+        <i class="fas fa-user-astronaut me-2"></i>
+        <span>Агенты</span>
+    </div>
+    <div class="acc-body">
+        <a href="agents.html">Агенты Турции</a>
+        <a href="agents.html">Агенты Казахстана</a>
+        <a href="agents.html">Агенты России</a>
+    </div>
+</div>
+<div class="menu-bg"></div>
+<div class="container-fluid">
+    <header class="header">
+        <div class="container-fluid">
+            <div class="icons-block">
+                <div id="menu">
+                    <div id="menu-bar" onclick="menuOnClick()">
+                        <div id="bar1" class="bar"></div>
+                        <div id="bar2" class="bar"></div>
+                        <div id="bar3" class="bar"></div>
+                    </div>
+                </div>
+                <div class="menu-bg" id="menu-bg"></div>
 
+            </div>
+            <div class="links">
+                <a href="index.html">CRM</a>
+                /
+                <span class="active">Мониторинг</span>
+            </div>
+        </div>
+    </header>
+</div>
 <main>
     <section class="container-fluid">
         <form>
-            <h3 class="mb-3" style="color: #0131ff"># <span>Мониторинг</span></h3>
+            <h3 class="mb-3" style="color: #83D0E4"># <span>Мониторинг</span></h3>
             <div class="monitoring-container flex-wrap flex-md-nowrap d-flex align-items-center">
                 <div class="directions-block col-12 col-sm-12 col-md-6 d-flex align-items-center pe-0 mb-2 mb-md-0 pe-md-3">
                     <div class="col-md-6 col-9 col-sm-9 col-xl-10 col-lg-8 pe-2">
