@@ -1,13 +1,30 @@
 $(function () {
 
     $('#accordeon .acc-head').on('click', function () {
-        $('#accordeon .acc-body').not($(this).next()).slideUp(200);
-        $(this).next().slideToggle(200);
+        $('#accordeon .acc-body').not($(this).next()).slideUp(200).removeClass('active');
+        $(this).next().slideDown(200).addClass('active');
+        $('#accordeon').parent().find('.bi-caret-down-fill').removeClass('active');
+        $(this).find('.bi-caret-down-fill').addClass('active');
+        $('#accordeon').parent().find('.acc-head').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    $('.close-menu-btn').on('click', function () {
+        $('#accordeon').animate({
+            opacity: 0.25,
+            left: "-=270",
+            width: "toggle"
+        }, 200);
     });
 
     $('#menu').on('click', function () {
-       $('.desc-link').addClass('active');
-       $('.menu-bg').addClass('active');
+        $('#accordeon').animate({
+            opacity: 1,
+            left: "+=270",
+            width: "toggle"
+        }, 200);
+        // $('.desc-link').addClass('active');
+       // $('.menu-bg').addClass('active');
     });
 
     $('.menu-bg').on('click', function () {

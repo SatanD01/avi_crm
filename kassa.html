@@ -30,7 +30,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="change_price" style="color: #83D0E4"># <span>Редактировать расход</span></h3>
+                <h3 class="modal-title" id="change_price" style="color: #0548c7"># <span>Редактировать расход</span></h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="">
@@ -111,43 +111,70 @@
                 </div>
             </form>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary br-2" data-bs-dismiss="modal">Отменить</button>
-                <button type="button" class="btn bg-purp br-2">Сохранить</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
+                <button type="button" class="btn bg-purp">Сохранить</button>
             </div>
         </div>
     </div>
 </div>
 <div id="accordeon" class="desc-link d-flex flex-column align-items-start">
-    <div class="acc-head icon-item d-flex align-items-center mt-2">
+    <div class="acc-top">
+        <div class="acc-top-ava">
+            <a href="#" class="person-ico"><i class="bi bi-person-circle"></i></a>
+            <div class="close-menu-btn"><i class="bi bi-pin-angle-fill"></i></div>
+        </div>
+        <div class="acc-top-course">
+            <span class="acc-person-name">Ruzmatov Ruzmat Ruzmatovich</span>
+            <div class="acc-price-block">
+                <div>
+                    <span>USD/UZS</span>
+                    <span>11.200</span>
+                </div>
+                <div>
+                    <span>USD/TRY</span>
+                    <span>16.75</span>
+                </div>
+                <div>
+                    <span>EUR/USD</span>
+                    <span>1.1</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="acc-head icon-item w-100 d-flex align-items-center">
         <i class="far fa-folder-open me-2"></i>
         <span>Заказы</span>
+        <i class="bi bi-caret-down-fill"></i>
     </div>
     <div class="acc-body">
         <a href="index.html">Заказы Турции</a>
         <a href="index.html">Заказы Казахстана</a>
         <a href="index.html">Заказы России</a>
     </div>
-    <div class="acc-head icon-item d-flex align-items-center">
+    <div class="acc-head icon-item w-100 d-flex align-items-center">
         <i class="fas fa-desktop me-2"></i>
         <span>Мониторинг</span>
+        <i class="bi bi-caret-down-fill"></i>
     </div>
     <div class="acc-body">
         <a href="monitoring.html">Мониторинг Турции</a>
         <a href="monitoring.html">Мониторинг Казахстана</a>
         <a href="monitoring.html">Мониторинг России</a>
     </div>
-    <div class="acc-head icon-item d-flex align-items-center">
+    <div class="acc-head icon-item w-100 d-flex align-items-center">
         <i class="fa fa-funnel-dollar me-2"></i>
         <span>Касса</span>
+        <i class="bi bi-caret-down-fill"></i>
     </div>
     <div class="acc-body">
         <a href="kassa.html">Касса Турции</a>
         <a href="kassa.html">Касса Казахстана</a>
         <a href="kassa.html">Касса России</a>
     </div>
-    <div class="acc-head icon-item d-flex align-items-center">
+    <div class="acc-head icon-item w-100 d-flex align-items-center">
         <i class="fas fa-user-astronaut me-2"></i>
         <span>Агенты</span>
+        <i class="bi bi-caret-down-fill"></i>
     </div>
     <div class="acc-body">
         <a href="agents.html">Агенты Турции</a>
@@ -163,9 +190,7 @@
             <div class="icons-block">
                 <div id="menu">
                     <div id="menu-bar" onclick="menuOnClick()">
-                        <div id="bar1" class="bar"></div>
-                        <div id="bar2" class="bar"></div>
-                        <div id="bar3" class="bar"></div>
+                        <i class="bi bi-pin"></i>
                     </div>
                 </div>
                 <div class="menu-bg" id="menu-bg"></div>
@@ -183,18 +208,18 @@
         <div class="tabs-navigation">
             <ul class="nav nav-pills" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="me-2 br-2 nav-link" id="pills-avia-tab" data-bs-toggle="pill" data-bs-target="#pills-avia" type="button" role="tab" aria-controls="pills-avia" aria-selected="true">
+                    <button class="me-2 nav-link" id="pills-avia-tab" data-bs-toggle="pill" data-bs-target="#pills-avia" type="button" role="tab" aria-controls="pills-avia" aria-selected="true">
                         <i  class="fa fa-plane"></i> Авиабилеты
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="me-2 br-2 nav-link " id="pills-payment-tab" data-bs-toggle="pill" data-bs-target="#pills-payment" type="button" role="tab" aria-controls="pills-payment" aria-selected="false">
+                    <button class="me-2 nav-link " id="pills-payment-tab" data-bs-toggle="pill" data-bs-target="#pills-payment" type="button" role="tab" aria-controls="pills-payment" aria-selected="false">
                         <i  class="fa fa-dollar-sign"></i>
                         Расход
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="me-2 br-2 nav-link active" id="pills-course-tab" data-bs-toggle="pill" data-bs-target="#pills-course" type="button" role="tab" aria-controls="pills-course" aria-selected="false">
+                    <button class="me-2 nav-link active" id="pills-course-tab" data-bs-toggle="pill" data-bs-target="#pills-course" type="button" role="tab" aria-controls="pills-course" aria-selected="false">
                         <i  class="fa fa-dollar-sign"></i>
                         Курс валют
                     </button>
@@ -275,7 +300,7 @@
                     <form method="get">
                         <div class="row d-flex align-items-center justify-content-between">
                             <div class="col-md-2 d-flex align-items-end" style="min-height: 56px">
-                                <span class="btn btn-accept br-2 w-100">Добавить расход</span>
+                                <span class="btn btn-accept w-100">Добавить расход</span>
                             </div>
                             <div class="col-md-2">
                                 <span>Год</span>
@@ -327,7 +352,7 @@
                                 </div>
                             </div>
                             <div class="col-md-2 d-flex align-items-end" style="min-height: 56px">
-                                <button class="w-100 btn btn-accept br-2">Найти</button>
+                                <button class="w-100 btn btn-accept">Найти</button>
                             </div>
                         </div>
                     </form>
@@ -460,7 +485,7 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h3 class="mb-3" style="color: #0131ff"># <span>Курс валют</span></h3>
                         <div>
-                            <button type="button" class="btn bg-purp br-2">Обновить</button>
+                            <button type="button" class="btn bg-purp">Обновить</button>
                         </div>
                     </div>
                     <div class="valute-block d-flex flex-wrap">

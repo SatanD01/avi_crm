@@ -29,36 +29,63 @@
 
 
 <div id="accordeon" class="desc-link d-flex flex-column align-items-start">
-    <div class="acc-head icon-item d-flex align-items-center mt-2">
+    <div class="acc-top">
+        <div class="acc-top-ava">
+            <a href="#" class="person-ico"><i class="bi bi-person-circle"></i></a>
+            <div class="close-menu-btn"><i class="bi bi-pin-angle-fill"></i></div>
+        </div>
+        <div class="acc-top-course">
+            <span class="acc-person-name">Ruzmatov Ruzmat Ruzmatovich</span>
+            <div class="acc-price-block">
+                <div>
+                    <span>USD/UZS</span>
+                    <span>11.200</span>
+                </div>
+                <div>
+                    <span>USD/TRY</span>
+                    <span>16.75</span>
+                </div>
+                <div>
+                    <span>EUR/USD</span>
+                    <span>1.1</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="acc-head icon-item w-100 d-flex align-items-center">
         <i class="far fa-folder-open me-2"></i>
         <span>Заказы</span>
+        <i class="bi bi-caret-down-fill"></i>
     </div>
     <div class="acc-body">
         <a href="index.html">Заказы Турции</a>
         <a href="index.html">Заказы Казахстана</a>
         <a href="index.html">Заказы России</a>
     </div>
-    <div class="acc-head icon-item d-flex align-items-center">
+    <div class="acc-head icon-item w-100 d-flex align-items-center">
         <i class="fas fa-desktop me-2"></i>
         <span>Мониторинг</span>
+        <i class="bi bi-caret-down-fill"></i>
     </div>
     <div class="acc-body">
         <a href="monitoring.html">Мониторинг Турции</a>
         <a href="monitoring.html">Мониторинг Казахстана</a>
         <a href="monitoring.html">Мониторинг России</a>
     </div>
-    <div class="acc-head icon-item d-flex align-items-center">
+    <div class="acc-head icon-item w-100 d-flex align-items-center">
         <i class="fa fa-funnel-dollar me-2"></i>
         <span>Касса</span>
+        <i class="bi bi-caret-down-fill"></i>
     </div>
     <div class="acc-body">
         <a href="kassa.html">Касса Турции</a>
         <a href="kassa.html">Касса Казахстана</a>
         <a href="kassa.html">Касса России</a>
     </div>
-    <div class="acc-head icon-item d-flex align-items-center">
+    <div class="acc-head icon-item w-100 d-flex align-items-center">
         <i class="fas fa-user-astronaut me-2"></i>
         <span>Агенты</span>
+        <i class="bi bi-caret-down-fill"></i>
     </div>
     <div class="acc-body">
         <a href="agents.html">Агенты Турции</a>
@@ -73,9 +100,7 @@
             <div class="icons-block">
                 <div id="menu">
                     <div id="menu-bar" onclick="menuOnClick()">
-                        <div id="bar1" class="bar"></div>
-                        <div id="bar2" class="bar"></div>
-                        <div id="bar3" class="bar"></div>
+                        <i class="bi bi-pin"></i>
                     </div>
                 </div>
                 <div class="menu-bg" id="menu-bg"></div>
@@ -121,52 +146,63 @@
                 </div>
                 <hr>
                 <form method="get">
-                    <div class="row agents_detail_body">
-                        <div class="col-md-12 d-flex flex-wrap align-items-center justify-content-between">
-                            <div class="mb-3 col-md-4 col-12 pe-md-2 pe-0">
-                                <span class="">Договор от:</span>
-                                <input class="form-control" type="date" value="2022-02-16" autocomplete="off">
+                    <div class="agents_detail_body">
+                        <div>
+                            <div>
+                                <span>Имя <sup>*</sup></span>
+                                <input class="form-control" type="text" value="Ruzmat" autocomplete="off">
                             </div>
-                            <div class="mb-3 col-md-4 col-12 pe-md-2 pe-0">
-                                <span class="">Договор до:</span>
-                                <input class="form-control" type="date" value="2022-12-31" autocomplete="off">
+                            <div>
+                                <span>Фамилия <sup>*</sup></span>
+                                <input class="form-control" type="text" value="Ruzmatov" autocomplete="off">
                             </div>
-                            <div class="mb-3 col-md-4 col-12">
-                                <span class="">Договор номер:</span>
-                                <input class="form-control" type="text" value="31" autocomplete="off">
+                            <div>
+                                <span>Логин <sup>*</sup></span>
+                                <input class="form-control" type="text" value="stnD01" autocomplete="off">
+                            </div>
+                            <div>
+                                <span>Статус <sup>*</sup></span>
+                                <select name="" class="selectpicker" placeholder="123">
+                                    <option value="">Активный</option>
+                                    <option value="">Не активный</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="col-12 d-flex flex-wrap">
-                            <div class="col-md-4 col-12">
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" id="a-price">
-                                    <label class="form-check-label" for="a-price">Агентские цены</label>
-                                </div>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" id="autobook">
-                                    <label class="form-check-label" for="autobook">Autobook::Charter</label>
-                                </div>
+                        <div>
+                            <div>
+                                <span>Электронная почта <sup>*</sup></span>
+                                <input class="form-control" type="email" value="sss@gmail.com" autocomplete="off">
                             </div>
-                            <div class="col-md-4 col-12 pe-md-3 pe-0">
-                                <div class="mb-3">
-                                    <span class="">Пароль (мин. 6 символов)</span>
-                                    <input class="form-control" type="password" name="setPass" autocomplete="off">
-                                </div>
+                            <div>
+                                <span>Телефон <sup>*</sup></span>
+                                <input class="form-control" type="text" inputmode="numeric" maxlength="13"  value="+998935555555" autocomplete="off">
                             </div>
-                            <div class="col-md-4 col-12">
-                                <div class="mb-3">
-                                    <span>
-                                        Активный аккаунт: <span class="text-success">Да</span>
-                                    </span>
-                                </div>
-                                <div class="mb-md-0 mb-3">
-                                    <span><i class="fa fa-file-download"></i> Загруженный договор от агента при регистрации:</span>
-                                    <span>нет</span>
-                                </div>
+                            <div>
+                                <span>Город <sup>*</sup></span>
+                                <select name="" class="selectpicker" placeholder="123">
+                                    <option value="">Узбекистан</option>
+                                    <option value="">США</option>
+                                </select>
                             </div>
-                            <div class="col-12">
-                                <button class="btn bg-purp br-2">Сохранить</button>
+                            <div>
+                                <span>Адрес <sup>*</sup></span>
+                                <input class="form-control" type="text" value="Sergeli" autocomplete="off">
                             </div>
+                        </div>
+                        <div>
+                            <div>
+                                <span>Доп. Email <sup>*</sup></span>
+                                <input class="form-control" type="text" value="sss1@gmail.com" autocomplete="off">
+                            </div>
+                            <div>
+                                <span>Город <sup>*</sup></span>
+                                <input class="form-control" type="text" value="Tashkent" autocomplete="off">
+                            </div>
+                            <div>
+                                <span>Индекс <sup>*</sup></span>
+                                <input class="form-control" type="text" value="10017" autocomplete="off">
+                            </div>
+                            <button class="btn bg-purp">Сохранить</button>
                         </div>
                     </div>
                 </form>
@@ -184,7 +220,7 @@
                     </select>
                 </div>
                 <div class="col-12">
-                    <button type="button" class="btn bg-purp br-2">Добавить</button>
+                    <button type="button" class="btn bg-purp">Добавить</button>
                 </div>
             </form>
             <hr>
