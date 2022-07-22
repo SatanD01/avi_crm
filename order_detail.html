@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Заказы</title>
+    <!--    links   -->
+    <link href="styles/crm.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="font-awasome/css/all.min.css">
+
+    <!--    header scripts  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
+    <script src="scripts/crm.js"></script>
+
+</head>
+<body>
+<script>
+    $(document).ready(function () { //
+        $('.selectpicker').selectpicker();
+    });
+</script>
+<div id="accordeon" class="desc-link d-flex flex-column align-items-start">
+    <div class="acc-top">
+        <div class="acc-top-ava">
+            <a href="#" class="person-ico"><i class="bi bi-person-circle"></i></a>
+            <div class="close-menu-btn"><i class="bi bi-pin-angle-fill"></i></div>
+        </div>
+        <div class="acc-top-course">
+            <span class="acc-person-name">Ruzmatov Ruzmat Ruzmatovich</span>
+            <div class="acc-price-block">
+                <div>
+                    <span>USD/UZS</span>
+                    <span>11.200</span>
+                </div>
+                <div>
+                    <span>USD/TRY</span>
+                    <span>16.75</span>
+                </div>
+                <div>
+                    <span>EUR/USD</span>
+                    <span>1.1</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="acc-head icon-item w-100 d-flex align-items-center">
+        <i class="far fa-folder-open me-2"></i>
+        <span>Заказы</span>
+        <i class="bi bi-caret-down-fill"></i>
+    </div>
+    <div class="acc-body">
+        <a href="index.html">Заказы Турции</a>
+        <a href="index.html">Заказы Казахстана</a>
+        <a href="index.html">Заказы России</a>
+    </div>
+    <div class="acc-head icon-item w-100 d-flex align-items-center">
+        <i class="fas fa-desktop me-2"></i>
+        <span>Мониторинг</span>
+        <i class="bi bi-caret-down-fill"></i>
+    </div>
+    <div class="acc-body">
+        <a href="monitoring.html">Мониторинг Турции</a>
+        <a href="monitoring.html">Мониторинг Казахстана</a>
+        <a href="monitoring.html">Мониторинг России</a>
+    </div>
+    <div class="acc-head icon-item w-100 d-flex align-items-center">
+        <i class="fa fa-funnel-dollar me-2"></i>
+        <span>Касса</span>
+        <i class="bi bi-caret-down-fill"></i>
+    </div>
+    <div class="acc-body">
+        <a href="kassa.html">Касса Турции</a>
+        <a href="kassa.html">Касса Казахстана</a>
+        <a href="kassa.html">Касса России</a>
+    </div>
+    <div class="acc-head icon-item w-100 d-flex align-items-center">
+        <i class="fas fa-user-astronaut me-2"></i>
+        <span>Агенты</span>
+        <i class="bi bi-caret-down-fill"></i>
+    </div>
+    <div class="acc-body">
+        <a href="agents.html">Агенты Турции</a>
+        <a href="agents.html">Агенты Казахстана</a>
+        <a href="agents.html">Агенты России</a>
+    </div>
+</div>
+<div class="menu-bg"></div>
+<div class="container-fluid">
+    <header class="header">
+        <div class="container-fluid">
+            <div class="icons-block">
+                <div id="menu">
+                    <div id="menu-bar" onclick="menuOnClick()">
+                        <i class="bi bi-pin"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="links">
+                <a href="#">CRM</a>
+                /
+                <span class="active">Заказы</span>
+            </div>
+        </div>
+    </header>
+</div>
+<main>
+    <div class="modal" id="AddUserModal" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Добавить пассажира</h5>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div>
+                            <span class="text-sm">Фамилия</span>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div>
+                            <span class="text-sm">Имя</span>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div>
+                            <span class="text-sm">Дата рождения</span>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div>
+                            <span class="text-sm">Тип</span>
+                            <select class="selectpicker">
+                                <option>Взрослый</option>
+                                <option>Ребенок</option>
+                            </select>
+                        </div>
+                        <div>
+                            <span class="text-sm">Пол</span>
+                            <select class="selectpicker">
+                                <option>Мужчина</option>
+                                <option>Женщина</option>
+                            </select>
+                        </div>
+                        <div>
+                            <span class="text-sm">Гражданство</span>
+                            <select class="selectpicker" data-size="10" data-live-search="true" >
+                                <option selected data-tokens="Все">Все</option>
+                                <option data-tokens="Узбекистан">Узбекистан</option>
+                                <option data-tokens="Америка">Америка</option>
+                            </select>
+                        </div>
+                        <div>
+                            <span class="text-sm">Серия и №</span>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div>
+                            <span class="text-sm">Срок действия</span>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div>
+                            <span class="text-sm">PNR</span>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" id="addUserButton">Добавить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="container-fluid">
+        <div class="step-block">
+            <div class="step-wizard-item pr-cancel current-item">
+                <span class="progress-count">0</span>
+                <span class="progress-label">Отменено</span>
+            </div>
+            <ul class="step-wizard-list mb-0 ps-0">
+                <li class="step-wizard-item">
+                    <span class="progress-count">1</span>
+                    <span class="progress-label">Billing Info</span>
+                </li>
+                <li class="step-wizard-item">
+                    <span class="progress-count">2</span>
+                    <span class="progress-label">Payment Method</span>
+                </li>
+                <li class="step-wizard-item">
+                    <span class="progress-count">3</span>
+                    <span class="progress-label">Checkout</span>
+                </li>
+                <li class="step-wizard-item current-item">
+                    <span class="progress-count">4</span>
+                    <span class="progress-label">Success</span>
+                </li>
+            </ul>
+        </div>
+        <div class="tabs-block">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="booking-agents" data-bs-toggle="pill"
+                            data-bs-target="#pills-agents" type="button" role="tab" aria-controls="pills-agents"
+                            aria-selected="true">Информация агента
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                            aria-selected="false">Информация билета
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-agents" role="tabpanel" aria-labelledby="booking-agents">
+                    <div class="booking-agents">
+                        <form class="booking-price-block">
+                            <div class="booking-price-input">
+                                <input class="form-control" type="text" placeholder="Цена USD"/>
+                                <input class="form-control" type="text" placeholder="Цена UZS"/>
+                                <button class="btn btn-outline-danger">Изменить</button>
+                            </div>
+                            <div class="booking-price-info">
+                                <div>
+                                    <span class="text-lg">1 400.00 <sup>$</sup> <span class="text-lg" style="font-weight: bold">x 11100</span></span><br>
+                                    <span class="text-lg">15 540 000.00 <sup>UZS</sup></span>
+                                </div>
+                                <div>
+                                    <span class="text-sm">Статус оплаты</span> <br>
+                                    <span class="text-danger text-sm">Не оплачено</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="booking-price-date">
+                                <div>
+                                    <span class="text-sm">Статус брони</span> <br>
+                                    <span class="text-danger text-sm">Забронирован до:</span>
+                                    <span class="text-sm">22.07.2022 15:56</span>
+                                </div>
+                                <button class="btn btn-primary w-100">
+                                    Забронировать
+                                </button>
+                            </div>
+                        </form>
+                        <div class="booking-agent-block">
+                            <div class="booking-agent-info">
+                                <form action="">
+                                    <span class="text-sm">Имя</span>
+                                    <input type="text" required class="form-control">
+                                    <span class="text-sm">Телефон</span>
+                                    <input type="text" required class="form-control">
+                                    <span class="text-sm">Email</span>
+                                    <input type="email" required class="form-control">
+                                    <div class="form-dd-block d-flex flex-column">
+                                        <span>Менеджер</span>
+                                        <select class="selectpicker" data-size="10" data-live-search="true">
+                                            <option selected data-tokens="Все">Все</option>
+                                            <option data-tokens="Мумтоз Мумтоз">Мумтоз Мумтоз[mumtoz@gmail.com]</option>
+                                            <option data-tokens="Андрей Миронов">Андрей Миронов[andrey@gmail.com]</option>
+                                        </select>
+                                    </div>
+                                    <a href="#" class="text-primary text-sm">Посмотреть агента</a>
+                                    <button class="w-100 btn btn-primary">Сохранить</button>
+                                </form>
+                                <a href="#" class="agent-tour-id text-sm">
+                                    <i class="fa fa-umbrella-beach"></i>
+                                    Турпакет: #12130
+                                </a>
+                            </div>
+                            <form class="booking-agent-desc">
+                                <span class="text-sm">Комментарий</span>
+                                <textarea class="form-control mb-3"></textarea>
+                                <button class="btn btn-primary w-100">Добавить</button>
+                                <div>
+                                    <span class="text-sm">Создание заказа №84305</span>
+                                    <div>
+                                        <span class="text-sm">21.07.2022</span> <br>
+                                        <span class="text-sm">15:56</span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="booking-pay-btns">
+                        <button class="btn btn-primary">Счет на оплату</button>
+                        <button class="btn btn-primary">Внести оплату</button>
+                        <button class="btn btn-primary">Оплтаить через Click</button>
+                        <button class="btn btn-outline-danger">Отменить</button>
+                    </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="d-flex mb-3 align-items-end ticket-title-block">
+                        <div class="me-2">
+                            <h3 class="mb-0 text-lg">Авиабилеты</h3>
+                            <div class="text-md">
+                                TAS - AYT - TAS	( 24.08.2022 10:00 - 29.08.2022 17:40)
+                            </div>
+                        </div>
+                        <button class="btn btn-primary ml-3" id="changeRoute"><i class="fa fa-edit text-white"></i> Изменить</button>
+                        <span data-order="" data-toggle="modal" data-target="#AddUserModal" class="mr-3 addPass btn btn-primary" style="margin-left: auto"><i class="fa fa-user-plus text-white"></i> Добавить пассажира</span>
+                        <button id="showTicket" class="btn btn-primary" style="margin-left: 5px"><i class="fa fa-receipt text-white"></i> Электронный билет</button>
+                    </div>
+                    <form id="editPassForm">
+                        <input type="hidden" name="orderId" value="84305">
+                        <input type="hidden" name="editOrder" value="1">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Фамилия</th>
+                                    <th>Имя</th>
+                                    <th>Дата рождения</th>
+                                    <th>Пол</th>
+                                    <th>Гражданство</th>
+                                    <th>Серия и №</th>
+                                    <th>Срок действия</th>
+                                    <th>PNR</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <i class="text-info fa fa-male"></i> Взрослый
+                                        <input type="text" autocomplete="off" required="" name="passes[160530][UF_SURNAME]" class="inplatin form-control" value="SAYDUMAROVA">
+                                    </td>
+                                    <td>
+                                        <input autocomplete="off" required="" type="text" name="passes[160530][UF_NAME]" class="inplatin form-control" value="LUIZA">
+                                    </td>
+                                    <td nowrap="">
+                                        <input autocomplete="off" required="" type="text" name="passes[160530][UF_DOB]" class="inpdate form-control w-auto d-inline-block" value="26.02.1961">
+                                        <select name="passes[160530][UF_AGE]" class="form-control w-auto d-inline-block">
+                                            <option disabled="" value=""> - </option>
+                                            <option selected="" value="AD"> Взрослый</option>
+                                            <option value="CH"> Ребёнок</option>
+                                            <option value="IN"> Младенец</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select style="width:100px" required="" name="passes[160530][UF_SEX]" class="form-control">
+                                            <option value="M">Мужской</option>
+                                            <option selected="" value="F">Женский</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select style="width:120px" name="passes[160530][UF_CITYZENSHIP]" class="form-control">
+                                            <option selected="" value="UZB">
+                                                UZB-Узбекистан</option>
+                                            <option value="RUS">
+                                                RUS-Российская Федерация</option>
+                                            <option value="KGZ">
+                                                KGZ-Киргизия</option>
+                                        </select>
+                                    </td>
+                                    <td nowrap="">
+                                        <input autocomplete="off" required="" name="passes[160530][UF_DOC_ID]" type="text" class="inpCaps form-control" value="FA0485824">
+                                    </td>
+                                    <td nowrap="">
+                                        <input autocomplete="off" required="" name="passes[160530][UF_DOC_DATE]" type="text" class="inpdate form-control" value="22.07.2029">
+                                    </td>
+                                    <td>
+                                        <br>
+                                        <br>
+                                    </td>
+                                    <td>
+                                        <span data-order="84305" data-passanger="160530" class="deletePass btn btn-outline-danger btn-sm">x</span>
+                                    </td>
+                                </tr>
+                                <tr class="">
+                                    <td>
+                                        <i class="fa fa-plane text-primary"></i>TAS-AYT[1965]<br> 24.08.2022 10:00:00]
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="mr-2">
+                                                <span class="d-block text-sm">Класс</span>
+                                                <select name="books[180308][UF_CABIN]" class="form-control w-auto d-inline-block">
+                                                    <option selected="" value="Y">Эконом</option>
+                                                    <option value="C">Бизнес</option>
+                                                </select>
+                                            </div>
+                                            <div class="">
+                                                <span class="d-block text-sm">Багаж</span>
+                                                <input autocomplete="off" required="" name="books[180308][UF_BAG]" type="text" class=" form-control w-auto d-inline-block" value="20">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        PID:160530/BID:180308<br>
+                                        prebook
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <input class="seat_input" name="books[180308][UF_SEAT]" data-bid="180308" type="hidden" value="">
+                                        <h5 class="m-0"></h5>
+                                    </td>
+                                </tr>
+                                <tr class="table-secondary"><td colspan="9"></td></tr>
+                                <tr class="">
+                                    <td>
+                                        <i class="fa fa-plane text-primary"></i>TAS-AYT[1965]<br> 24.08.2022 10:00:00]
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="mr-2">
+                                                <span class="d-block text-sm">Класс</span>
+                                                <select name="books[180308][UF_CABIN]" class="form-control w-auto d-inline-block">
+                                                    <option selected="" value="Y">Эконом</option>
+                                                    <option value="C">Бизнес</option>
+                                                </select>
+                                            </div>
+                                            <div class="">
+                                                <span class="d-block text-sm">Багаж</span>
+                                                <input autocomplete="off" required="" name="books[180308][UF_BAG]" type="text" class=" form-control w-auto d-inline-block" value="20">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        PID:160530/BID:180308<br>
+                                        prebook
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <input class="seat_input" name="books[180308][UF_SEAT]" data-bid="180308" type="hidden" value="">
+                                        <h5 class="m-0"></h5>
+                                    </td>
+                                </tr>
+                                <tr class="table-secondary"><td colspan="9"></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="d-flex danger-info-block">
+                            <span class="text-danger text-sm"><i class="fa fa-exclamation-triangle text-danger"></i> Для изменения данных пассажиров: внесите изменения и нажмите кнопку сохранить изменения. Данные сразу поменяются, если билет уже выписан подождите 10-20 минут синхронизацию с авиакомпанией.</span>
+                            <button id="editFormBtn" class="ml-auto btn btn-outline-danger btn-sm"><i class="fa fa-edit text-danger"></i> Сохранить изменения</button>
+                        </div>
+                    </form>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#dataedit">
+                        История измений
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+</body>
+</html>
